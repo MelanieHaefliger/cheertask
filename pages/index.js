@@ -5,7 +5,6 @@ import TaskForm from './TaskForm'
 import TaskList from './TaskList'
 import Tabs     from '../components/Tabs'
 import CalendarPlaceholder from '../components/CalendarPlaceholder'
-import './styles/cheertask.css'
 
 export default function HomePage() {
   // state for “new” vs “edit” modal

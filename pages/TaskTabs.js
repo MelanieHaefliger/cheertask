@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import TaskForm  from './TaskForm';
 import TaskList  from './TaskList';
-import './styles/cheertask.css';          // ensure styling is bundled
 
 export default function TaskTabs() {
   const [tab, setTab] = useState('add');  // 'add' | 'list'
