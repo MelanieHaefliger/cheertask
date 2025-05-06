@@ -1,0 +1,13 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <!-- rotate whole ring 90 ° CCW around centre -->
+  <g transform="rotate(-90 128 128)">
+    <!-- original left half → after rotation sits on top (pink) -->
+    <path d="M0 128a128 128 0 0 1 256 0Z" fill="#FF37A6"></path>
+    <!-- original right half → after rotation sits on bottom (green) -->
+    <path d="M256 128a128 128 0 0 1-256 0Z" fill="#43B929"></path>
+  </g>
+
+  <!-- inner circle (50 % diameter) -->
+  <circle cx="128" cy="128" r="64" fill="#FFCAE9"></circle>
+</svg>

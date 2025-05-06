@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: linear-gradient(
+    to right top,
+    #ffcae9,
+    #fad9f5,
+    #f7e7fc,
+    #f9f3ff,
+    #ffffff
+  );
+  min-height:100dvh;
+}
+
+.btn-primary {
+  background:#ff37a6; color:#fff; border-radius:9999px;
+  padding:.6rem 1.4rem; border:none; cursor:pointer;
+  transition:background .2s;
+}
+.btn-primary:hover { background:#d82f8d; }
+.btn-primary:disabled { opacity:.6; cursor:default; }
+
+/* ---------- hero benefit tiles ------------------------------- */
+.benefit-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(11rem,1fr));
+  gap: 1.2rem;
+  margin: 2.5rem 0;
+}
+.benefit-tile {
+  background:#fff;
+  padding:2rem;
+  border-radius:18px;
+  box-shadow:0 3px 8px rgba(0,0,0,.07);
+  width: 100%;
+  height: 5.5rem;                      /* higher */
+  display:flex;align-items:center;
+}
+/* tiny random offset (fake “floating” layout à la TravelPerk) */
+.benefit-tile:nth-child(odd)   { transform:translateY(-6%); }
+.benefit-tile:nth-child(even)  { transform:translateY(6%);  }
+@media (max-width:640px){
+  .benefit-tile{transform:none;}       /* stack neatly on mobile */
+}
+
+/* ---------- CTA button -------------------------------------- */
+.cta-primary{
+  background:#FF37A6;
+}
+.cta-primary:hover{ background:#d61e87; }
+
+/* ---------- top tab-bar ------------------------------------- */
+.tabbar{
+  position:sticky; top:0; z-index:30;
+  display:flex; gap:.5rem;
+  justify-content:center;
+  background:#ffcae9;           /* soft pink strip */
+  padding:.4rem .6rem;
+  backdrop-filter:blur(6px);
+}
+.tab{
+  background:none;
+  border:none;
+  font-weight:600;
+  padding:.45rem 1.2rem;
+  border-radius:9999px;
+  cursor:pointer;
+  transition:background .15s;
+}
+.tab:hover      { background:rgba(0,0,0,.05); }
+.tab.active     { background:#fff; box-shadow:0 2px 4px rgba(0,0,0,.08); }
+
+/* ---------- smart-sort CTA (grey pill) ----------------------- */
+.smart-btn{
+  background:#EDEDED;
+}
+.smart-btn:hover{ background:#D6D6D6; }
+
+/* ---------- drag-handle hint ---------------------------------*/
+.drag-col{ font-size:1.1rem; }
+
+/* ---------- checkbox tick style ------------------------------*/
+.trow input[type="checkbox"]:checked + span::after{
+  content:'✔'; color:#43B929; margin-left:.25rem;
+}
